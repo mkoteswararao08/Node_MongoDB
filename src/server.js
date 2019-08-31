@@ -19,7 +19,7 @@ app.post('/todos',(req,res)=>{
     })
     todo1.save((err,document)=>{
        if(err){
-           console.log('hi error'+err);
+           console.log(err);
            res.send(err);
        }
        else{
@@ -30,7 +30,7 @@ app.post('/todos',(req,res)=>{
 
 app.get('/todos',(req,res)=>{
     todo.find().then(document=>{
-        //  console.log(document); 
+         console.log(document); 
          res.send({document});
     },(err)=>{
         // console.log(err);

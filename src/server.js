@@ -19,6 +19,7 @@ app.post('/todos',(req,res)=>{
     })
     todo1.save((err,document)=>{
        if(err){
+           console.log('hi error'+err);
            res.send(err);
        }
        else{

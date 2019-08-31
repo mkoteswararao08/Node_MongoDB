@@ -3,7 +3,7 @@ const mongoose=require('mongoose');
 const {todo} = require('./models/todo');
 const {user}= require('./models/user')
 const bodyparser= require('body-parser');
-mongoose.connect('mongodb://localhost:27017/TodoApp',{useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp',{useNewUrlParser: true});
 const app=exprees();
 app.use(bodyparser.json());
 var port=process.env.PORT || 3000
